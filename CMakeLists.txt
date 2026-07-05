@@ -1,23 +1,16 @@
 cmake_minimum_required(VERSION 3.20)
-project(UltraLowLatencyLOB CXX)
+project(LimitOrderBook LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
+set(CMAKE_CXX_EXTENSIONS OFF)
 
-# GCC-specific ultra-low latency optimization flags
-add_compile_options(
-    -O3 
-    -march=native     # Optimizes for your specific CPU architecture (AVX2/AVX-512)
-    -flto             # Link-Time Optimization for cross-file inlining
-    -fno-rtti         # Disable Run-Time Type Information (saves overhead)
-    -Wall -Wextra -Wpedantic -Werror # Strict warnings
-)
+add_compile_options(-O3 -march=native -flto -Wall -Wextra)
 
-#source files
-set(SOURCES 
-    src/main.cpp
-)
+add_executable(lob src/main.cpp)
 
-add_executable(${PROJECT_NAME} ${SOURCES})
+target_include_directories(lob PRIVATE ${CMAKE_SOURCE_DIR}/src)
 
-target_link_libraries(${PROJECT_NAME} ws2_32)
+target_link_libraries(lob ws2_32)
+
+target_link_options(lob PRIVATE -flto)

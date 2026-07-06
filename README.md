@@ -24,7 +24,7 @@ This project demonstrates core low-latency software engineering principles used 
 * **Operating System:** Windows 11 (Native Win32 Architecture)
 * **Compiler:** MinGW-w64 GCC 16.1.0 (`g++`)
 * **Build System:** CMake + Ninja Build
-* **Language Standard:** C++20
+* **Language Standard:** C++23
 * **Network Protocol:** UDP Multicast via Winsock2 (`ws2_32`)
 
 ---

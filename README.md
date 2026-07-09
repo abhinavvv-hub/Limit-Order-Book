@@ -19,7 +19,7 @@ This project demonstrates core low-latency software engineering principles used 
 
 ---
 
-## 🛠️ Tech Stack & Toolchain
+## Tech Stack & Toolchain
 
 * **Operating System:** Windows 11 (Native Win32 Architecture)
 * **Compiler:** MinGW-w64 GCC 16.1.0 (`g++`)
@@ -27,7 +27,7 @@ This project demonstrates core low-latency software engineering principles used 
 * **Language Standard:** C++23
 * **Network Protocol:** UDP Multicast via Winsock2 (`ws2_32`)
 
-## ⏱️ Performance & Benchmarks
+## Performance & Benchmarks
 
 The core matching engine was benchmarked using hardware Time-Stamp Counters (`__rdtsc()`) to measure exact CPU cycle latency, bypassing wall-clock OS timers. 
 
